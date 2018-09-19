@@ -10,21 +10,27 @@ class NewsCard extends PolymerElement {
             width: 250px;
             margin: 15px 0px 15px 10px;
             text-align: left;
+            
+          }
+          .newstitle{
             font-size: 18px;
             font-weight : 600;
+            padding-top : 120px;
           }
-          .newstext{
-            padding-top : 160px;
+          .newsdesc{
+            margin-top : 0.5rem;
           }
         </style>
 
         <div class = 'newscard' id = 'newscard'>
           <div >
           </div>
-          <div class='newstext' id='newstext'>
-            This is news app by ngryBird.
+          <div class='newstitle' id='newstitle'>
+            Gunman opens fire, injuring three people before he's shot by police at Middleton office building
           </div>
-          
+          <div class = 'newsdesc' id='newsdesc'>
+            Authorities say three workers and a gunman were wounded at a Middleton software company Wednesday morning
+          </div>
         </div>
         
       `;
