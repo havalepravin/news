@@ -1,6 +1,9 @@
 import { PolymerElement, html } from './node_modules/@polymer/polymer/polymer-element.js';
 // Define the class for a new element called custom-element
 class NewsCard extends PolymerElement {
+    static get properties(){
+      
+    }
     static get template(){
       return html`
         <style>
@@ -12,10 +15,18 @@ class NewsCard extends PolymerElement {
             text-align: left;
             
           }
+          .newsimage{
+            height : 120px;
+            width  : 250px;
+          }
+          .imagetag{
+            height : 100%;
+            width : 100%;
+          }
           .newstitle{
+            margin-top : 0.5rem;
             font-size: 18px;
             font-weight : 600;
-            padding-top : 120px;
           }
           .newsdesc{
             margin-top : 0.5rem;
@@ -23,13 +34,14 @@ class NewsCard extends PolymerElement {
         </style>
 
         <div class = 'newscard' id = 'newscard'>
-          <div >
+          <div class='newsimage' id='newsimage'>
+            <img class= 'imagetag' src='https://ichef.bbci.co.uk/news/1024/branded_news/BC2A/production/_103507184_gettyimages-467043626.jpg'>
           </div>
           <div class='newstitle' id='newstitle'>
-            Gunman opens fire, injuring three people before he's shot by police at Middleton office building
+            Restaurant sedates lobsters with marijuana
           </div>
           <div class = 'newsdesc' id='newsdesc'>
-            Authorities say three workers and a gunman were wounded at a Middleton software company Wednesday morning
+            A lobster restaurant in Maine says the process is more humane as it lessens their pain before death.
           </div>
         </div>
         
