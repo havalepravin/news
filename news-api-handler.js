@@ -17,11 +17,18 @@ class NewsApiHandler extends PolymerElement{
             }
         }
     }
-    getURL(queryParams){
+    getRequestURL(queryParams){
 
     }
     getdata(options){
-        
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+              xhr.status === 200 ? options.onDataReady(xhr.responseText) : options.onFailure('error')
+            }
+        }
+        xhr.open('GET', 'https://yoursite.com')
+        xhr.send()
     }
 }
 customElements.define('news-api-handler',NewsApiHandler);
