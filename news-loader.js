@@ -20,13 +20,22 @@ class NewsLoader extends PolymerElement{
             `;
     }
     onComplete(response){
-
+        console.log(response);
+        
     }
     onFailure(msg){
-
+        console.log(msg);
     }
     getTopHeadelines(){
-        
+        var options={
+            queryParams :{
+                country : this.contry,
+                category : this.category
+            },
+            onDataReady : this.onComplete,
+            onFailure : this.onFailure
+        };
+        this.$.newsAPI.getdata(options);
     }
 
 }
