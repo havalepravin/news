@@ -18,7 +18,7 @@ class NewsApiHandler extends PolymerElement{
         }
     }
     getRequestURL(queryParams){
-
+        return V2THAPIBaseUrl + 'country=' + queryParams.country + '&category=' + queryParams.category + 'apiKey=' + this.APIkey;
     }
     getdata(options){
         var xhr = new XMLHttpRequest();
@@ -27,7 +27,8 @@ class NewsApiHandler extends PolymerElement{
               xhr.status === 200 ? options.onDataReady(xhr.responseText) : options.onFailure('error')
             }
         }
-        xhr.open('GET', 'https://yoursite.com')
+        var requestURL = this.getRequestURL(options.queryParams);
+        xhr.open('GET', requestURL);
         xhr.send()
     }
 }
