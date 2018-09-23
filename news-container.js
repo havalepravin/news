@@ -3,7 +3,7 @@ import './news-card.js';
 import './news-loader.js';
 // Define the class for a new element called custom-element
 class NewsContainer extends PolymerElement {
-  static get template(){
+  static get template() {
     return html`
       <style>
         .newscontainer{
@@ -15,13 +15,20 @@ class NewsContainer extends PolymerElement {
         
       </style>
       <div class = 'newscontainer' id= 'newscontainer'>
-        <news-loader></news-loader>
+        <news-loader id='newsloader'></news-loader>
         <news-card></news-card>
       </div>
       
     `;
   }
-
+  constructor() {
+    super();
+  }
+  ready() {
+    super.ready();
+    console.log('In ready callback');
+    this.$.newsloader.getTopHeadelines();
+  }
 };
 // Register the new element with the browser
 customElements.define('news-container', NewsContainer);

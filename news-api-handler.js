@@ -18,13 +18,13 @@ class NewsApiHandler extends PolymerElement{
         }
     }
     getRequestURL(queryParams){
-        return V2THAPIBaseUrl + 'country=' + queryParams.country + '&category=' + queryParams.category + 'apiKey=' + this.APIkey;
+        return this.V2THAPIBaseUrl + 'country=' + queryParams.country + '&category=' + queryParams.category + '&apiKey=' + this.APIkey;
     }
     getdata(options){
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
-              xhr.status === 200 ? options.onDataReady(xhr.responseText) : options.onFailure('error')
+              xhr.status === 200 ? options.onDataReady(xhr.responseText) : options.onFailure(error)
             }
         }
         var requestURL = this.getRequestURL(options.queryParams);

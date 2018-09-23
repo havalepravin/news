@@ -16,12 +16,13 @@ class NewsLoader extends PolymerElement{
     }
     static get template(){
         return html `
-                <news-api-handler id='newAPI'></news-api-handler>
+                <news-api-handler id='newsAPI'></news-api-handler>
             `;
     }
     onComplete(response){
         console.log(response);
-        
+        var responseData = JSON.parse(response);
+        console.log(responseData);
     }
     onFailure(msg){
         console.log(msg);
