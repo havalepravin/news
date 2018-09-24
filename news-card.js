@@ -2,7 +2,24 @@ import { PolymerElement, html } from './node_modules/@polymer/polymer/polymer-el
 // Define the class for a new element called custom-element
 class NewsCard extends PolymerElement {
     static get properties(){
-      
+      return{
+        newsTitle : {
+          type : String,
+          value : null 
+        },
+        newsDesc : {
+          type : String,
+          value : null
+        },
+        newsImage : {
+          type : String,
+          value : null
+        },
+        newsUrl : {
+          type : String,
+          value : null
+        }
+      };
     }
     static get template(){
       return html`
