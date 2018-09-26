@@ -5,15 +5,15 @@ class NewsCard extends PolymerElement {
       return{
         newsTitle : {
           type : String,
-          value : null 
+          value : 'Restaurant sedates lobsters with marijuana' 
         },
         newsDesc : {
           type : String,
-          value : null
+          value : 'A lobster restaurant in Maine says the process is more humane as it lessens their pain before death.'
         },
         newsImage : {
           type : String,
-          value : null
+          value : 'https://ichef.bbci.co.uk/news/1024/branded_news/BC2A/production/_103507184_gettyimages-467043626.jpg'
         },
         newsUrl : {
           type : String,
@@ -52,17 +52,20 @@ class NewsCard extends PolymerElement {
 
         <div class = 'newscard' id = 'newscard'>
           <div class='newsimage' id='newsimage'>
-            <img class= 'imagetag' src='https://ichef.bbci.co.uk/news/1024/branded_news/BC2A/production/_103507184_gettyimages-467043626.jpg'>
+            <img class= 'imagetag' src={{newsImage}}>
           </div>
           <div class='newstitle' id='newstitle'>
-            Restaurant sedates lobsters with marijuana
+            <span>[[newsTitle]]</span>
           </div>
           <div class = 'newsdesc' id='newsdesc'>
-            A lobster restaurant in Maine says the process is more humane as it lessens their pain before death.
+            <span>[[newsDesc]]</span>
           </div>
         </div>
         
       `;
+    }
+    computeImageUrl(){
+      return this.newsImage;
     }
 }
 // Register the new element with the browser

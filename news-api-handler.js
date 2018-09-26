@@ -29,7 +29,7 @@ class NewsApiHandler extends PolymerElement{
         }
         var requestURL = this.getRequestURL(options.queryParams);
         xhr.open('GET', requestURL);
-        xhr.send()
+        //xhr.send()
     }
 }
 customElements.define('news-api-handler',NewsApiHandler);
