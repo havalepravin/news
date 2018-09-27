@@ -44,8 +44,8 @@ class NewsLoader extends PolymerElement{
                 country : this.contry,
                 category : this.category
             },
-            onDataReady : this.onComplete,
-            onFailure : this.onFailure
+            onDataReady : this.onComplete.bind(this),
+            onFailure : this.onFailure.bind(this)
         };
         this.$.newsAPI.getdata(options);
     }

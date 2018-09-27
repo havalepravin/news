@@ -24,7 +24,7 @@ class NewsApiHandler extends PolymerElement{
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
-              xhr.status === 200 ? options.onDataReady(xhr.responseText).bind(this) : options.onFailure(error)
+              xhr.status === 200 ? options.onDataReady(xhr.responseText).bind(this) : options.onFailure(error).bind(this)
             }
         }
         var requestURL = this.getRequestURL(options.queryParams);
