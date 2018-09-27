@@ -3,12 +3,14 @@ import './news-card.js';
 class NewsRepeater extends PolymerElement{
     static get properties(){
         return{
-            newsData: Array
+            newsData: {
+                type : Array
+            }
         }
     }
     static get template(){
         return html`
-            <template is='dom-repeate' items='{{newsData}}'>
+            <template is='dom-repeat' items="{{newsData}}">
                 <news-card 
                     news-title = 'item.title'
                     news-desc = 'item.description'
@@ -18,4 +20,9 @@ class NewsRepeater extends PolymerElement{
             </template>
         `;
     }
+    ready(){
+        super.ready();
+        console.log('component is ready');
+    }
 }
+customElements.define('news-repeater', NewsRepeater);

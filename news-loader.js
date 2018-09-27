@@ -23,7 +23,7 @@ class NewsLoader extends PolymerElement{
         return html `
                 <news-api-handler id='newsAPI'></news-api-handler>
                 <div id = 'contents'>
-
+                    
                 </div>
             `;
     }
@@ -31,7 +31,7 @@ class NewsLoader extends PolymerElement{
         console.log(response);
         var responseData = JSON.parse(response);
         console.log(responseData);
-        this.headlines = responseData;
+        this.headlines = responseData.articles;
         this.renderNews();
     }
     onFailure(msg){
@@ -50,9 +50,14 @@ class NewsLoader extends PolymerElement{
         this.$.newsAPI.getdata(options);
     }
     renderNews(){
-        newsRepeater = document.createElement('news-repeater');
-        newsRepeater.newsData = this.headlines.articles;
-        this.querySelector('#contents').innerHTML = newsRepeater;
+        var newRepeaterString = '<news-repeater news-data =headlines></news-repeater>'
+        var div = document.createElement('div');
+        var shadowRoot = div.attachShadow({mode: 'open'});
+        shadowRoot.innerHTML = newRepeaterString;
+        //var newsRepeater = document.createElement('news-repeater');
+        //newsRepeater.setAttribute('news-data', this.headlines.articles);
+        this.$.contents.appendChild(shadowRoot);
+        //this.querySelector('#contents').innerHTML = newsRepeater;
     }
 
 }
