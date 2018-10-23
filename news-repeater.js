@@ -49,7 +49,6 @@ class NewsRepeater extends PolymerElement{
     }
     checkCallback(){
         console.log(this.news);
-        //this.$.repeater.render();
     }
 }
 customElements.define('news-repeater', NewsRepeater);

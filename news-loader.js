@@ -52,9 +52,7 @@ class NewsLoader extends PolymerElement{
     renderNews(){
         var newsRepeater = document.createElement('news-repeater');
         newsRepeater.news =  this.headlines.articles;
-        //this.$.contents += newsRepeater;
         this.$.contents.appendChild(newsRepeater);
-        //this.$.newsRepeater.checkCallback();
     }
 
 }
