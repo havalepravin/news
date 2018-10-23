@@ -16,7 +16,7 @@ class NewsContainer extends PolymerElement {
       </style>
       <div class = 'newscontainer' id= 'newscontainer'>
         <news-loader id='newsloader'></news-loader>
-        <news-card></news-card>
+        <newscard></news-card>
       </div>
       
     `;

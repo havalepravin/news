@@ -26,7 +26,7 @@ class NewsCard extends PolymerElement {
         <style>
           .newscard{
             background-color: #f1f1f1;
-            height : 320px;
+            height : auto;
             width: 250px;
             margin: 15px 0px 15px 10px;
             text-align: left;
