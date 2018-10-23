@@ -33,7 +33,7 @@ class NewsCard extends PolymerElement {
             
           }
           .newsimage{
-            height : 120px;
+            height : auto;
             width  : 250px;
           }
           .imagetag{
